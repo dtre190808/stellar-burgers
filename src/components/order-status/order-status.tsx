@@ -3,6 +3,7 @@ import { OrderStatusProps } from './type';
 import { OrderStatusUI } from '@ui';
 
 const statusText: { [key: string]: string } = {
+  canceled: 'Отменён',
   pending: 'Готовится',
   done: 'Выполнен',
   created: 'Создан'
