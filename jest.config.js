@@ -1,0 +1,22 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/*.test.ts', '**/*.test.tsx'],
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|svg|woff|woff2)$': '<rootDir>/src/__mocks__/fileMock.ts',
+    '^@pages$': '<rootDir>/src/pages',
+    '^@components$': '<rootDir>/src/components',
+    '^@ui$': '<rootDir>/src/components/ui',
+    '^@ui-pages$': '<rootDir>/src/components/ui/pages',
+    '^@utils-types$': '<rootDir>/src/utils/types',
+    '^@api$': '<rootDir>/src/utils/burger-api.ts',
+    '^@slices$': '<rootDir>/src/services/slices',
+    '^@selectors$': '<rootDir>/src/services/selectors'
+  },
+  transform: {
+    '^.+\\.(css|less|scss|sass)$': 'jest-css-modules-transform',
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.json' }]
+  },
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts']
+};
